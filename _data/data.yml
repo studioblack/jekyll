@@ -1,0 +1,47 @@
+title: Potionomics
+developer: Vorocious Games
+foundingDate:
+releaseDate: January 1, 2017
+website: http://potionomics.com
+basedIn: City, State
+pressContact: email@gmail.com
+address:
+  - line: address line 1
+  - line: address line 2
+  - line: address line 3
+phone: 1-800-000-000
+socials:
+  - name: Facebook
+    url: http://www.facebook.com
+description: 	Hello. This is a short compilation of facts about the game. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+history: 	Since we're an indie developer, we want a history to our game. This paragraph will explain this history in short. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+platforms:
+  - name: Platform Name
+    url: http://www.test.com
+
+videos:
+  - name: Trailer
+    id: 7jQbITg0MSk
+
+awards:
+  - description: Winner in this highly relevant contest.
+    info: Award Location, 20 October, 1989
+
+quotes:
+  - description: HOLY SHIT SO AMAZING
+    name: Caps Guy
+    website: Angry Review
+    url: http://www.test.com
+
+links:
+  - title: Release Blog Post
+    description: The blog-post through which this game was released is available at
+    url: http://vlambeer.com/bloglink
+
+credits:
+  - name: Full Name
+    role: Job Role
+contacts:
+  - name: Inquires
+    url: test@gmail.com

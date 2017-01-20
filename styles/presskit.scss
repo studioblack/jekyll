@@ -1,0 +1,108 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+$screen-xs-min:              0 !default;
+$screen-sm-min:              768px !default;
+$screen-md-min:              992px !default;
+$screen-lg-min:              1200px !default;
+
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+$grid-columns:              12 !default;
+$grid-gutter-width:         30px !default;
+$grid-gutter-width-lg:      44px !default;
+
+@mixin clearfix {
+  &:after,
+  &:before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+$xs: "(max-width: 767px)";
+$sm: "(min-width: 768px)";
+$md: "(min-width: 992px)";
+$lg: "(min-width: 1200px)";
+
+@import "normalize";
+@import "grid";
+@import "ui-kit-presskit";
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+body {
+	padding: 15px 0;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 0.9em;
+	line-height:1.6em;
+  max-width: 100%;
+}
+
+h2 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+ul {
+	list-style-type: square;
+}
+
+dl {
+  dt {
+    margin-top: 10px;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+}
+
+
+img {
+	width: 100%;
+}
+
+hr {
+	border-color: #8c8172;
+}
+
+.navigation h1 {
+	padding: 0 15px;
+	margin-bottom: 0;
+}
+
+.navigation a.nav-header {
+	padding: 5px 15px;
+	font-weight: bold;
+}
+
+.navigation ul {
+	padding: 15px 0;
+}
+
+.navigation p {
+	padding-bottom: 10px;
+}
+
+.iframe-container {
+	position: relative;
+	/* Magic! Makes sure the container is high enough to show the entire iframe
+	 * Thanks to http://andmag.se/2011/11/responsive-embeds/ */
+	padding-bottom: 56.5%;
+}
+
+iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
