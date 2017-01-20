@@ -29,15 +29,15 @@ awards:
     info: Award Location, 20 October, 1989
 
 quotes:
-  - description: HOLY SHIT SO AMAZING
-    name: Caps Guy
-    website: Angry Review
+  - description: Amazing Game
+    name: Name
+    website: Website Name
     url: http://www.test.com
 
 links:
   - title: Release Blog Post
     description: The blog-post through which this game was released is available at
-    url: http://vlambeer.com/bloglink
+    url: http://test.com
 
 credits:
   - name: Full Name
