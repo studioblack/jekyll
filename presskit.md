@@ -13,27 +13,41 @@ permalink: /presskit/
           <li>
             <a href="#factsheet">Factsheet</a>
           </li>
-          <li>
-            <a href="#description">Description</a>
-          </li>
-          <li>
-            <a href="#history">History</a>
-          </li>
-          <li>
-            <a href="#features">Features</a>
-          </li>
-          <li>
-            <a href="#videos">Videos</a>
-          </li>
-          <li>
-            <a href="#screenshots">Screenshots</a>
-          </li>
-          <li>
-            <a href="#illustrations">Illustrations &amp; Concept Art</a>
-          </li>
-          <li>
-            <a href="#logos">Logo &amp; Icon</a>
-          </li>
+          {% if site.data.data.description != null %}
+            <li>
+              <a href="#description">Description</a>
+            </li>
+          {% endif %}
+          {% if site.data.data.history != null %}
+            <li>
+              <a href="#history">History</a>
+            </li>
+          {% endif %}
+          {% if site.data.data.features != null %}
+            <li>
+              <a href="#features">Features</a>
+            </li>
+          {% endif %}
+          {% if site.data.data.videos != null %}
+            <li>
+              <a href="#videos">Videos</a>
+            </li>
+          {% endif %}
+          {% if site.data.data.screenshots != null %}
+            <li>
+              <a href="#screenshots">Screenshots</a>
+            </li>
+          {% endif %}
+          {% if site.data.data.illustrations != null %}
+            <li>
+              <a href="#illustrations">Illustrations &amp; Concept Art</a>
+            </li>
+          {% endif %}
+          {% if site.data.data.logo != null %}
+            <li>
+              <a href="#logos">Logo &amp; Icon</a>
+            </li>
+          {% endif %}
           {% if site.data.data.music != null %}
             <li>
               <a href="#music">Music</a>
@@ -74,7 +88,7 @@ permalink: /presskit/
       </p>
 
       <div class="row">
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-sm-4">
           <h2 id="factsheet">Factsheet</h2>
 
           <dl>
@@ -148,7 +162,7 @@ permalink: /presskit/
           </dl>
         </div>
 
-        <div class="col-xs-8">
+        <div class="col-xs-12 col-sm-8">
           {% if site.data.data.description != null %}
             <h2 id="description">Description</h2>
 
@@ -188,35 +202,51 @@ permalink: /presskit/
 
       <hr />
 
-      <h2 id="videos">Videos</h2>
+      {% if site.data.data.videos != null %}
+        <h2 id="videos">Videos</h2>
 
-      {% for video in site.data.data.videos %}
-        {{ video.name }} <a href="http://www.youtube.com/watch?v={{ video.id }}">YouTube</a>
+        {% for video in site.data.data.videos %}
+          {{ video.name }} <a href="http://www.youtube.com/watch?v={{ video.id }}">YouTube</a>
 
-        <div class="uk-responsive-width iframe-container">
-          <iframe src="http://www.youtube.com/embed/{{ video.id }}" frameborder="0" width="100%" allowfullscreen></iframe>
-        </div>
-      {% endfor %}
+          <div class="uk-responsive-width iframe-container">
+            <iframe src="http://www.youtube.com/embed/{{ video.id }}" frameborder="0" width="100%" allowfullscreen></iframe>
+          </div>
+        {% endfor %}
 
-      <hr />
+        <hr />
+      {% endif %}
 
       {% if site.data.data.screenshots != null %}
         <h2 id="screenshots">Screenshots</h2>
 
-        {% for screenshot in site.data.data.screenshots %}
-          {% assign mod = forloop.index | modulo:3 %}
-          {% if forloop.index == 1 or mod == 1 %}
-            <div class="row image-row">
-          {% endif %}
-              <div class="col-xs-4">
+        <div class="hidden-xs">
+          {% for screenshot in site.data.data.screenshots %}
+            {% assign mod = forloop.index | modulo:3 %}
+            {% if forloop.index == 1 or mod == 1 %}
+              <div class="row image-row">
+            {% endif %}
+                <div class="col-xs-4">
+                  <a href="{{ screenshot.url }}" target="_blank">
+                    <img width="100%" src="{{ screenshot.url }}" />
+                  </a>
+                </div>
+            {% if mod == 0 or forloop.last  %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="visible-xs">
+          {% for screenshot in site.data.data.screenshots %}
+            <div class="row">
+              <div class="col-xs-12 image-row">
                 <a href="{{ screenshot.url }}" target="_blank">
                   <img width="100%" src="{{ screenshot.url }}" />
                 </a>
               </div>
-          {% if mod == 0 or forloop.last  %}
             </div>
-          {% endif %}
-        {% endfor %}
+          {% endfor %}
+        </div>
 
         <hr />
       {% endif %}
@@ -224,20 +254,34 @@ permalink: /presskit/
       {% if site.data.data.illustrations != null %}
         <h2 id="illustrations">Illustrations &amp; Concept Art</h2>
 
-        {% for illustration in site.data.data.illustrations %}
-          {% assign mod = forloop.index | modulo:3 %}
-          {% if forloop.index == 1 or mod == 1 %}
-            <div class="row image-row">
-          {% endif %}
-              <div class="col-xs-4">
+        <div class="hidden-xs">
+          {% for illustration in site.data.data.illustrations %}
+            {% assign mod = forloop.index | modulo:3 %}
+            {% if forloop.index == 1 or mod == 1 %}
+              <div class="row image-row">
+            {% endif %}
+                <div class="col-xs-4">
+                  <a href="{{ illustration.url }}" target="_blank">
+                    <img width="100%" src="{{ illustration.url }}" />
+                  </a>
+                </div>
+            {% if mod == 0 or forloop.last  %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="visible-xs-block">
+          {% for illustration in site.data.data.illustrations %}
+            <div class="row">
+              <div class="col-xs-12 image-row">
                 <a href="{{ illustration.url }}" target="_blank">
                   <img width="100%" src="{{ illustration.url }}" />
                 </a>
               </div>
-          {% if mod == 0 or forloop.last  %}
             </div>
-          {% endif %}
-        {% endfor %}
+          {% endfor %}
+        </div>
 
         <hr />
       {% endif %}
@@ -245,20 +289,34 @@ permalink: /presskit/
       {% if site.data.data.logos != null %}
         <h2 id="logos">Logos &amp; Icons</h2>
 
-        {% for logo in site.data.data.logos %}
-          {% assign mod = forloop.index | modulo:3 %}
-          {% if forloop.index == 1 or mod == 1 %}
-            <div class="row image-row">
-          {% endif %}
-              <div class="col-xs-4">
+        <div class="hidden-xs">
+          {% for logo in site.data.data.logos %}
+            {% assign mod = forloop.index | modulo:3 %}
+            {% if forloop.index == 1 or mod == 1 %}
+              <div class="row image-row">
+            {% endif %}
+                <div class="col-xs-4">
+                  <a href="{{ logo.url }}" target="_blank">
+                    <img width="100%" src="{{ logo.url }}" />
+                  </a>
+                </div>
+            {% if mod == 0 or forloop.last  %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="visible-xs">
+          {% for logo in site.data.data.logos %}
+            <div class="row">
+              <div class="col-xs-12 image-row">
                 <a href="{{ logo.url }}" target="_blank">
                   <img width="100%" src="{{ logo.url }}" />
                 </a>
               </div>
-          {% if mod == 0 or forloop.last  %}
             </div>
-          {% endif %}
-        {% endfor %}
+          {% endfor %}
+        </div>
 
         <hr />
       {% endif %}
@@ -335,7 +393,7 @@ permalink: /presskit/
       {% endif %}
 
       <div class="row">
-        <div class="col-xs-7">
+        <div class="col-xs-12 col-sm-7">
           <h2 id="team">Team &amp; Repeating Collaborators</h2>
 
           <dl>
@@ -346,7 +404,7 @@ permalink: /presskit/
           </dl>
         </div>
 
-        <div class="col-xs-5">
+        <div class="col-xs-12 col-sm-5">
           <h2 id="contact">Contact</h2>
 
           {% for contact in site.data.data.contacts %}

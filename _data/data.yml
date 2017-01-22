@@ -55,7 +55,6 @@ illustrations:
     url: /images/illustrations/potionomics_banner.jpg
   - title:
     url: /images/illustrations/potionomics_splash_screen.jpg
-
   - title:
     url: /images/character_art/character_art_1.jpg
   - title:
@@ -74,8 +73,8 @@ illustrations:
     url: /images/feature_art/feature_art_3.jpg
 
 logos:
-  - title:
-    url:
+  # - title:
+  #   url:
 
 
 awards:
