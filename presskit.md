@@ -20,26 +20,40 @@ permalink: /presskit/
             <a href="#history">History</a>
           </li>
           <li>
-            <a href="#projects">Projects</a>
+            <a href="#features">Features</a>
           </li>
           <li>
             <a href="#videos">Videos</a>
           </li>
           <li>
-            <a href="#images">Images</a>
+            <a href="#screenshots">Screenshots</a>
           </li>
           <li>
-            <a href="#logo">Logo &amp; Icon</a>
+            <a href="#illustrations">Illustrations &amp; Concept Art</a>
           </li>
           <li>
-            <a href="#awards">Awards &amp; Recognition</a>
+            <a href="#logos">Logo &amp; Icon</a>
           </li>
-          <li>
-            <a href="#articles">Selected Articles</a>
-          </li>
-          <li>
-            <a href="#links">Additional Links</a>
-          </li>
+          {% if site.data.data.music != null %}
+            <li>
+              <a href="#music">Music</a>
+            </li>
+          {% endif %}
+          {% if site.data.data.awards != null %}
+            <li>
+              <a href="#awards">Awards &amp; Recognition</a>
+            </li>
+          {% endif %}
+          {% if site.data.data.articles != null %}
+            <li>
+              <a href="#articles">Selected Articles</a>
+            </li>
+          {% endif %}
+          {% if site.data.data.links != null %}
+            <li>
+              <a href="#links">Additional Links</a>
+            </li>
+          {% endif %}
           <li>
             <a href="#team">Team</a>
           </li>
@@ -51,7 +65,13 @@ permalink: /presskit/
     </div>
 
     <div class="col-xs-12 col-md-9">
-      <img src="test.png" width="100%" />
+      <img src="{{ site.data.data.featureImage }}" width="100%" />
+
+      <p>
+        Welcome to the Potionomics press kit! This kit contains the necessary information to grow more familiar with our
+        project and team in order to write articles regarding the game. Additional information can be found on our
+        website though you can contact <a href="mailto:media@voraciousgames.com">media@voraciousgames.com</a> for more info.
+      </p>
 
       <div class="row">
         <div class="col-xs-4">
@@ -64,11 +84,6 @@ permalink: /presskit/
               Based in {{ site.data.data.basedIn }}
             </dd>
 
-            {% if site.data.data.foundingData != null %}
-              <dt>Founding date:</dt>
-              <dd>{{ site.data.data.foundingData }}</dd>
-            {% endif %}
-
             {% if site.data.data.website != null %}
               <dt>Website:</dt>
               <dd><a href="{{ site.data.data.website }}">{{ site.data.data.website }}</a></dd>
@@ -77,6 +92,39 @@ permalink: /presskit/
             {% if site.data.data.pressContact != null %}
               <dt>Press / Business Contact:</dt>
               <dd><a href="mailto:{{ site.data.data.pressContact }}">{{ site.data.data.pressContact }}</a></dd>
+            {% endif %}
+
+            {% if site.data.data.releaseDate != null %}
+              <dt>Release date:</dt>
+              <dd>{{ site.data.data.releaseDate }}</dd>
+            {% endif %}
+
+            {% if site.data.data.platforms != null %}
+              <dt>Platforms:</dt>
+              {% for platform in site.data.data.platforms %}
+                <dd>
+                  {% if platform.url != null %}
+                    <a href="{{ platform.url }}">{{ platform.name }}</a>
+                  {% else %}
+                    {{ platform.name }}
+                  {% endif %}
+                </dd>
+              {% endfor %}
+            {% endif %}
+
+            {% if site.data.data.availability != null %}
+              <dt>Availability:</dt>
+              <dd>{{ site.data.data.availability }}</dd>
+            {% endif %}
+
+            {% if site.data.data.price != null %}
+              <dt>Price:</dt>
+              <dd>{{ site.data.data.price }}</dd>
+            {% endif %}
+
+            {% if site.data.data.rating != null %}
+              <dt>ESRB:</dt>
+              <dd>{{ site.data.data.rating }}</dd>
             {% endif %}
 
             {% if site.data.data.socials != null %}
@@ -101,16 +149,40 @@ permalink: /presskit/
         </div>
 
         <div class="col-xs-8">
-          <h2 id="description">Description</h2>
+          {% if site.data.data.description != null %}
+            <h2 id="description">Description</h2>
 
-          <p>
-            {{ site.data.data.description }}
-          </p>
+            {% for paragraph in site.data.data.description %}
+              <p>
+                {{ paragraph.paragraph }}
+              </p>
+            {% endfor %}
 
-          <h2 id="history">History</h2>
+          {% endif %}
 
-          <h2 id="projects">Projects</h2>
+          {% if site.data.data.history != null %}
+            <h2 id="history">History</h2>
 
+            {% for paragraph in site.data.data.history %}
+              <p>
+                {{ paragraph.paragraph }}
+              </p>
+            {% endfor %}
+
+          {% endif %}
+
+          {% if site.data.data.features != null %}
+            <h2 id="features">Features</h2>
+
+            <ul>
+              {% for feature in site.data.data.features %}
+                <li>
+                  {{ feature.description }}
+                </li>
+              {% endfor %}
+            </ul>
+
+          {% endif %}
         </div>
       </div>
 
@@ -128,64 +200,139 @@ permalink: /presskit/
 
       <hr />
 
-      <h2 id="images">Images</h2>
+      {% if site.data.data.screenshots != null %}
+        <h2 id="screenshots">Screenshots</h2>
 
-      Fill this up
-
-      <hr />
-
-      <h2 id="logo">Logo &amp; Icon</h2>
-
-      Fill this up
-
-      <hr />
-
-      <h2 id="awards">Awards &amp; Recognition</h2>
-
-      <ul>
-        {% for award in site.data.data.awards %}
-          <li>
-            "{{ award.description }}" - {{ award.info }}
-          </li>
+        {% for screenshot in site.data.data.screenshots %}
+          {% assign mod = forloop.index | modulo:3 %}
+          {% if forloop.index == 1 or mod == 1 %}
+            <div class="row image-row">
+          {% endif %}
+              <div class="col-xs-4">
+                <a href="{{ screenshot.url }}" target="_blank">
+                  <img width="100%" src="{{ screenshot.url }}" />
+                </a>
+              </div>
+          {% if mod == 0 or forloop.last  %}
+            </div>
+          {% endif %}
         {% endfor %}
-      </ul>
 
-      <hr />
+        <hr />
+      {% endif %}
 
-      <h2 id="articles">Selected Articles</h2>
+      {% if site.data.data.illustrations != null %}
+        <h2 id="illustrations">Illustrations &amp; Concept Art</h2>
 
-      <ul>
-        {% for quote in site.data.data.quotes %}
-          <li>
-            "{{ quote.description }}" <br />
-            - {{ quote.name }},
-            {% if quote.url != null %}
-              <a href="{{ quote.url }}">
-                {{ quote.website }}
+        {% for illustration in site.data.data.illustrations %}
+          {% assign mod = forloop.index | modulo:3 %}
+          {% if forloop.index == 1 or mod == 1 %}
+            <div class="row image-row">
+          {% endif %}
+              <div class="col-xs-4">
+                <a href="{{ illustration.url }}" target="_blank">
+                  <img width="100%" src="{{ illustration.url }}" />
+                </a>
+              </div>
+          {% if mod == 0 or forloop.last  %}
+            </div>
+          {% endif %}
+        {% endfor %}
+
+        <hr />
+      {% endif %}
+
+      {% if site.data.data.logos != null %}
+        <h2 id="logos">Logos &amp; Icons</h2>
+
+        {% for logo in site.data.data.logos %}
+          {% assign mod = forloop.index | modulo:3 %}
+          {% if forloop.index == 1 or mod == 1 %}
+            <div class="row image-row">
+          {% endif %}
+              <div class="col-xs-4">
+                <a href="{{ logo.url }}" target="_blank">
+                  <img width="100%" src="{{ logo.url }}" />
+                </a>
+              </div>
+          {% if mod == 0 or forloop.last  %}
+            </div>
+          {% endif %}
+        {% endfor %}
+
+        <hr />
+      {% endif %}
+
+      {% if site.data.data.awards != null %}
+        <h2 id="awards">Awards &amp; Recognition</h2>
+
+        <ul>
+          {% for award in site.data.data.awards %}
+            <li>
+              "{{ award.description }}" - {{ award.info }}
+            </li>
+          {% endfor %}
+        </ul>
+
+        <hr />
+      {% endif %}
+
+      {% if site.data.data.articles != null %}
+        <h2 id="articles">Selected Articles</h2>
+
+        <ul>
+          {% for article in site.data.data.articles %}
+            <li>
+              "{{ article.description }}" <br />
+              - {{ article.name }},
+              {% if article.url != null %}
+                <a href="{{ article.url }}">
+                  {{ article.website }}
+                </a>
+              {% else %}
+                {{ article.website }}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+
+        <hr />
+      {% endif %}
+
+      {% if site.data.data.links != null %}
+        <h2 id="links">Additional Links</h2>
+
+        <dl>
+          {% for link in site.data.data.links %}
+            <dt>{{ link.title }}</dt>
+            <dd>
+              {{ link.description }} <a href="{{ link.url }}">{{ link.url }}</a>
+            </dd>
+          {% endfor %}
+        </dl>
+
+        <hr />
+      {% endif %}
+
+      {% if site.data.data.music != null %}
+        <h2 id="music">Music</h2>
+
+        <p>
+          Potionomics features a live-orchestral score! Have a listen to a few samples:
+        </p>
+
+        <ul>
+          {% for song in site.data.data.music %}
+            <li>
+              <a href="{{ song.url }}">
+                {{ song.url }}
               </a>
-            {% else %}
-              {{ quote.website }}
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
+            </li>
+          {% endfor %}
+        </ul>
 
-
-      <hr />
-
-      <h2 id="links">Additional Links</h2>
-
-      <dl>
-        {% for link in site.data.data.links %}
-          <dt>{{ link.title }}</dt>
-          <dd>
-            {{ link.description }} <a href="{{ link.url }}">{{ link.url }}</a>
-          </dd>
-        {% endfor %}
-      </dl>
-
-
-      <hr />
+        <hr />
+      {% endif %}
 
       <div class="row">
         <div class="col-xs-7">

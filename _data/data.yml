@@ -1,47 +1,122 @@
+featureImage: /images/concept_art/concept_art.jpg
 title: Potionomics
-developer: Vorocious Games
-foundingDate:
-releaseDate: January 1, 2017
+developer: Voracious Games, LLC
+releaseDate: January 2018 on Steam (dates for other platforms TBD)
 website: http://potionomics.com
-basedIn: City, State
-pressContact: email@gmail.com
+basedIn: Seattle, Washington
+pressContact: media@voraciousgames.com
+availability: Digital download on the above platforms
+price: $25 USD on Steam, TBD on console & tablet
+rating: T for Teen
 address:
-  - line: address line 1
-  - line: address line 2
-  - line: address line 3
-phone: 1-800-000-000
+phone:
 socials:
   - name: Facebook
-    url: http://www.facebook.com
-description: 	Hello. This is a short compilation of facts about the game. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-history: 	Since we're an indie developer, we want a history to our game. This paragraph will explain this history in short. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    url: https://www.facebook.com/potionomicsgame/
+  - name: Twitter
+    url: https://twitter.com/potionomics
+  - name: Tumblr
+    url: https://www.tumblr.com/blog/potionomicsgame
+description:
+  - paragraph: Potionomics is a singleplayer game where players assume the role of Sylvia, a penniless witch who must raise money to save her debt ridden potion shop from the clutches of greedy loan sharks. The game features a customizable 3D potion shop as well as a cast of colorfully animated characters inspired by the animation styles of Pixar and Studio Ghibli.
+  - paragraph: Along the way, players will encounter mighty (and not-so-mighty) heroes, classic RPG creatures, and a genius economist trapped in an owl’s body. As every aspiring entrepreneur knows, customers will be fickle, competition will be fierce, and prices never stay stable. Add in some magic and you have a recipe for a magnificent adventure unlike any you’ve ever played before.
+history:
+  - paragraph: Voracious Games is an independent, globally dispersed team of experienced game developers who have come together for a simple reason&#58; we are hungry to create games that embody the 3 C’s&#58; commercial, critical, and cultural success. Creating an independent studio has been all of our dreams and we are hungry to make it happen. At Voracious Games, our team has set out to enrich the lives of our players by providing engaging and visually exceptional gaming experiences by focusing on creating Pixar / Disney level 3D character animations in games with stylized visuals. With our burning passion for games and drive to fulfill our vision, Voracious Games can't wait to show the world what we're brewing with our first title Potionomics.
 
 platforms:
-  - name: Platform Name
-    url: http://www.test.com
+  - name: Steam
+    # url: http://www.test.com
+  - name: PS4
+    # url: http://www.test.com
+  - name: Wii U
+    # url: http://www.test.com
+  - name: Tablet
+    # url: http://www.test.com
+
+features:
+  - description: Play as Sylvia, a teenage witch and potion shop owner in this Business Management / Simulation game set in a fantastical world.
+  - description: Create potions using different ingredients and techniques. Sell them to your customers to make money and upgrade your shop and its equipment.
+  - description: Navigate a dynamic in-game economy that fluctuates naturally and is impacted by the player’s decisions.
+  - description: Watch the world and Sylvia’s shop change as she progresses through her story and grows her customer base.
+  - description: Unravel Sylvia’s journey across 5 distinct chapters, each containing their own unique plots and characters.
 
 videos:
   - name: Trailer
-    id: 7jQbITg0MSk
+    id: CYF2sSDefug
+
+screenshots:
+  - title:
+    url: /images/feature_art/feature_art_1.jpg
+  - title:
+    url: /images/feature_art/feature_art_2.jpg
+
+illustrations:
+  - title:
+    url: /images/illustrations/potionomics_banner.jpg
+  - title:
+    url: /images/illustrations/potionomics_splash_screen.jpg
+
+  - title:
+    url: /images/character_art/character_art_1.jpg
+  - title:
+    url: /images/character_art/character_art_2.jpg
+  - title:
+    url: /images/character_art/character_art_3.jpg
+  - title:
+    url: /images/character_art/character_art_4.jpg
+  - title:
+    url: /images/character_art/character_art_5.jpg
+  - title:
+    url: /images/character_art/character_art_6.jpg
+  - title:
+    url: /images/feature_art/feature_art_3.jpg
+  - title:
+    url: /images/feature_art/feature_art_3.jpg
+
+logos:
+  - title:
+    url:
+
 
 awards:
-  - description: Winner in this highly relevant contest.
-    info: Award Location, 20 October, 1989
+  # - description:
+  #   info:
 
-quotes:
-  - description: Amazing Game
-    name: Name
-    website: Website Name
-    url: http://www.test.com
+article:
+  # - description: HOLY SHIT SO AMAZING
+  #   name: Caps Guy
+  #   website: Angry Review
+  #   url: http://www.test.com
 
 links:
-  - title: Release Blog Post
-    description: The blog-post through which this game was released is available at
-    url: http://test.com
+  # - title:
+  #   description:
+  #   url:
+
+music:
+  - url: https://soundcloud.com/gpnicolett/potionomics-main-theme
+  - url: https://soundcloud.com/gpnicolett/sylvias-theme
 
 credits:
   - name: Full Name
     role: Job Role
+  - name: Aryo Jati Darmwan
+    role: Creative & Business Director
+  - name: Corey Blackburn
+    role: CTO & Programming
+  - name: Anguel Bogoev
+    role: Character Animation
+  - name: Sengamphon Lattanavong
+    role: Character Animation
+  - name: Hope Lee
+    role: Concept Art & Illustration
+  - name: Joe Stachnik
+    role: 3D Character Modeler
+  - name: Tim Vensel
+    role: Production & Marketing
+  - name: Greg Nicolett
+    role: Music & Audio
+
 contacts:
   - name: Inquires
-    url: test@gmail.com
+    url: contact@voraciousgames.com
