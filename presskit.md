@@ -236,7 +236,7 @@ permalink: /presskit/
           {% endfor %}
         </div>
 
-        <div class="visible-xs">
+        <div class="visible-xs-block">
           {% for screenshot in site.data.data.screenshots %}
             <div class="row">
               <div class="col-xs-12 image-row">
@@ -306,7 +306,7 @@ permalink: /presskit/
           {% endfor %}
         </div>
 
-        <div class="visible-xs">
+        <div class="visible-xs-block">
           {% for logo in site.data.data.logos %}
             <div class="row">
               <div class="col-xs-12 image-row">
