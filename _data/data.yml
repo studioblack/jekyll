@@ -69,8 +69,6 @@ illustrations:
     url: /images/character_art/character_art_6.jpg
   - title:
     url: /images/feature_art/feature_art_3.jpg
-  - title:
-    url: /images/feature_art/feature_art_3.jpg
 
 logos:
   # - title:
@@ -97,8 +95,6 @@ music:
   - url: https://soundcloud.com/gpnicolett/sylvias-theme
 
 credits:
-  - name: Full Name
-    role: Job Role
   - name: Aryo Jati Darmwan
     role: Creative & Business Director
   - name: Corey Blackburn
