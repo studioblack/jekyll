@@ -209,7 +209,7 @@ permalink: /presskit/
           {{ video.name }} <a href="http://www.youtube.com/watch?v={{ video.id }}">YouTube</a>
 
           <div class="uk-responsive-width iframe-container">
-            <iframe src="http://www.youtube.com/embed/{{ video.id }}" frameborder="0" width="100%" allowfullscreen></iframe>
+            <iframe class="video-frame" src="http://www.youtube.com/embed/{{ video.id }}" frameborder="0" width="100%" allowfullscreen></iframe>
           </div>
         {% endfor %}
 
@@ -379,15 +379,11 @@ permalink: /presskit/
           Potionomics features a live-orchestral score! Have a listen to a few samples:
         </p>
 
-        <ul>
-          {% for song in site.data.data.music %}
-            <li>
-              <a href="{{ song.url }}">
-                {{ song.url }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
+        {% for song in site.data.data.music %}
+          <div>
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ song.id }}&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+          </div>
+        {% endfor %}
 
         <hr />
       {% endif %}
