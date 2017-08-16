@@ -1,4 +1,4 @@
----
+--
 # Front matter comment to ensure Jekyll properly reads file.
 ---
 
@@ -127,7 +127,7 @@ img {
 // .text-extra-large { font-size: 4.0rem; }
 
 .spacing-small { margin-bottom: 30px; }
-.spacing-base { margin-bottom: 60px; }
+.spacing-base { margin-bottom: 60px; margin-top: 60px; }
 .spacing-medium { margin-bottom: 80px; }
 .spacing-large { margin-bottom: 100px; }
 @media #{$sm} {
@@ -465,7 +465,6 @@ img {
 
 .divider-container {
   text-align: center;
-  margin-top: 20px;
 }
 
 .section-headline-top {
